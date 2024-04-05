@@ -1,0 +1,4 @@
+.env
+*.pyc
+airflow_data/logs
+nifi_data/

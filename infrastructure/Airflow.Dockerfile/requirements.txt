@@ -1,0 +1,9 @@
+pyarrow==10.0.1
+pandas
+psycopg2-binary
+apache-airflow==2.8.4
+apache-airflow-providers-postgres
+apache-airflow-providers-http
+apache-airflow-providers-amazon
+certifi
+pydantic==2.6

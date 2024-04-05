@@ -1,0 +1,40 @@
+# LOGGING
+pg_stat_statements.max = 10000
+pg_stat_statements.track = all
+pg_stat_statements.save = on
+log_checkpoints = on
+logging_collector = on
+log_filename = 'postgresql-%Y-%m-%d_%H%M%S.log'
+log_file_mode = 0766
+log_min_messages = warning
+log_min_error_statement = error
+log_line_prefix = 'user=%u-%h,db=%d '
+
+# CONNECTION
+listen_addresses = '*'
+
+# TRANSACTION
+synchronous_commit = off
+
+# MEMORY
+shared_buffers = 64MB
+work_mem = 64MB
+maintenance_work_mem = 256MB
+effective_cache_size = 256MB
+
+# Checkpoint settings
+checkpoint_completion_target = 0.9
+
+# Autovacuum and autoanalyze settings
+autovacuum_vacuum_scale_factor = 0.01
+autovacuum_analyze_scale_factor = 0.01
+	
+# MODULES
+shared_preload_libraries = 'pg_stat_statements'
+
+# REPLICATION
+wal_level = logical             # minimal, archive, hot_standby, or logical (change requires restart)
+max_replication_slots = 10		# max number of replication slots (change requires restart)
+max_wal_senders = 10            # max number of walsender processes (change requires restart)
+#wal_keep_segments = 4          # in logfile segments, 16MB each; 0 disables
+#wal_sender_timeout = 60s       # in milliseconds; 0 disables
